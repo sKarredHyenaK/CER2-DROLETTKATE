@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Fundación Patrimonio Vivo{% endblock %}</title>
+
+    <!--Bootstrap 5 CSS-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+<body>
+    <!--Bootstrap 5 JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
+        <!--NAVBAR-->
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="{% url 'patrimonios:index' %}">Patrimonio Vivo</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'patrimonios:index' %}">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'patrimonios:catalogo' %}">Catálogo</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/admin/">Admin</a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav">
+                        {% if user.is_authenticated %}
+                        <li class="nav-item">
+                            <span class="nav-link text-muted">Cuenta: {{ user.username }}</span>
+                        </li>
+                        {% else %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="/admin/login/">Iniciar Sesión</a>
+                        </li>
+                        {% endif %}
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!--Contenido Dinamico-->
+        <main class="container my-5 flex-fill">
+            {% block content %}
+            <!-- Aqui se muestra index.html, catalogo.html o detalle.html -->
+            {% endblock %}
+        </main>
+
+        <!--Footer-->
+        <footer>
+        <div class="container">
+            <div class="row text-center">
+                <div class="col">
+                    <h5>Contacto</h5>
+                    <p>Telefono: +56 9 1111 2222</p>
+                    <p>Correo: contacto@patrimoniovivo.com</p>
+                </div>
+                <div class="col">
+                    <h5>Ubicación</h5>
+                    <p>Calle Algunlugar 321, XVII Region</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

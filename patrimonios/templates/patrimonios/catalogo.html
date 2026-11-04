@@ -1,0 +1,47 @@
+{% extends 'patrimonios/base.html' %}
+{% block title %}Catálogo - Fundación Patrimonio Vivo{% endblock %}
+
+{% block content %}
+<h2 class="mb-4">Catálogo Patrimonial</h2>
+
+<!-- Filtro Categorías -->
+<div class="mb-4">
+    <span class="fw-bold me-2">Filtrar por categoría:</span>
+    <a href="{% url 'patrimonios:catalogo' %}"
+        class="btn btn-sm {% if not categoria_seleccionada %}btn-dark{% else %}btn-outline-dark{% endif %} me-1 mb-1">
+        Todas
+    </a>
+    {% for categ in categorias %}
+    <a href="{% url 'patrimonios:catalogo' %}?categoria={{ cat.id }}"
+        class="btn btn-sm {% if categoria_seleccionada == cat.id %}btn-dark{% else %}btn-outline-dark{% endif %} me-1 mb-1">
+        {{ categ.nombre }}
+    </a>
+    {% endfor %}
+</div>
+
+<!-- Listado de Lugares -->
+<div class="row row-cols-1 row-cols-md-3 g-4">
+    {% for lugar in lugares %}
+    <div class="col">
+        <div class="card h-100 shadow-sm">
+            <img src="{{ lugar.imagen }}" class="card-img-top" alt="{{ lugar.nombre }}"
+                style="height: 200px; object-fit: cover;">
+            <div class="card-body">
+                <span class="badge bg-secondary mb-2">{{ lugar.categoria.nombre }}</span>
+                <h5 class="card-title">{{ lugar.nombre }}</h5>
+                <p class="card-text text-muted">📍 {{ lugar.ubicacion }}</p>
+                <p class="card-text">{{ lugar.descripcion|truncatewords:15 }}</p>
+            </div>
+            <div class="card-footer bg-white border-top-0">
+                <a href="{% url 'patrimonios:detalle' lugar.id %}" class="btn btn-outline-primary btn-sm w-100">Ver
+                    detalle</a>
+            </div>
+        </div>
+    </div>
+    {% empty %}
+    <div class="col-12">
+        <div class="alert alert-info">No se encontraron lugares patrimoniales registrados en esta categoría.</div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

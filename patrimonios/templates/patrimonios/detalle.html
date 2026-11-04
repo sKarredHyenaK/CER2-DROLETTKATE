@@ -1,0 +1,31 @@
+{% extends 'patrimonios/base.html' %}
+{% block title %}{{ lugar.nombre }} - Detalle{% endblock %}
+
+{% block content %}
+<div class="card shadow-sm border-0">
+    <div class="row g-0">
+        <div class="col-md-6">
+            <img src="{{ lugar.imagen }}" class="img-fluid rounded-start h-100" alt="{{ lugar.nombre }}"
+                style="object-fit: cover; min-height: 300px;">
+        </div>
+        <div class="col-md-6">
+            <div class="card-body p-4">
+                <span class="badge bg-primary mb-2">{{ lugar.categoria.nombre }}</span>
+                <h2 class="card-title fw-bold">{{ lugar.nombre }}</h2>
+                <p class="text-muted"> {{ lugar.ubicacion }}</p>
+
+                {% if lugar.anio_construccion %}
+                <p class="fw-semibold"> Año de construcción: <span class="fw-normal">{{ lugar.anio_construccion
+                        }}</span></p>
+                {% endif %}
+
+                <hr>
+                <h5>Descripción</h5>
+                <p class="card-text">{{ lugar.descripcion }}</p>
+
+                <a href="{% url 'patrimonios:catalogo' %}" class="btn btn-secondary mt-3">← Volver al Catálogo</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
