@@ -1,10 +1,11 @@
 # CERTAMEN 2 EIN082B
 
 ### Requisitos previos:
-
-Python instalado
-verificar: python --version
-
+- Python instalado
+verificar:
+```bash 
+python --version
+```
 ### Instalación y Configuración:
 - Descargar o clonar proyecto
 
@@ -15,13 +16,14 @@ python -m venv .venv        # Crear el entorno virtual
 source .venv/bin/activate   # Activar el entorno virtual (macOS/Linux)
 ```
 - Instalar Dependencias
-
+```bash
 pip install -r requirements.txt
-
+```
 - Configurar Base de Datos
-
+```bash
 python manage.py migrate
-
+```
 - Ejecutar Aplicación
-
+```bash
 python manage.py runserver
+```
