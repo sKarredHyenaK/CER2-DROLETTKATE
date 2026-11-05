@@ -2,7 +2,7 @@
 {% block title %}Catálogo - Fundación Patrimonio Vivo{% endblock %}
 
 {% block content %}
-<h2 class="mb-4">Catálogo Patrimonial</h2>
+<h2 class="mb-4">Catálogo de Patrimonios</h2>
 
 <!-- Filtro Categorías -->
 <div class="mb-4">
@@ -12,8 +12,8 @@
         Todas
     </a>
     {% for categ in categorias %}
-    <a href="{% url 'patrimonios:catalogo' %}?categoria={{ cat.id }}"
-        class="btn btn-sm {% if categoria_seleccionada == cat.id %}btn-dark{% else %}btn-outline-dark{% endif %} me-1 mb-1">
+    <a href="{% url 'patrimonios:catalogo' %}?categoria={{ categ.id }}"
+        class="btn btn-sm {% if categoria_seleccionada == categ.id %}btn-dark{% else %}btn-outline-dark{% endif %} me-1 mb-1">
         {{ categ.nombre }}
     </a>
     {% endfor %}
@@ -29,7 +29,7 @@
             <div class="card-body">
                 <span class="badge bg-secondary mb-2">{{ lugar.categoria.nombre }}</span>
                 <h5 class="card-title">{{ lugar.nombre }}</h5>
-                <p class="card-text text-muted">📍 {{ lugar.ubicacion }}</p>
+                <p class="card-text text-muted"> {{ lugar.ubicacion }}</p>
                 <p class="card-text">{{ lugar.descripcion|truncatewords:15 }}</p>
             </div>
             <div class="card-footer bg-white border-top-0">

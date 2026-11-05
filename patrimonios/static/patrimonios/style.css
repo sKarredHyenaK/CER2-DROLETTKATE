@@ -1,0 +1,5 @@
+/* Aplicar la tipografía Ubuntu a todo el sitio */
+body {
+    font-family: 'Ubuntu', sans-serif;
+    background-color: #f8f9fa;
+}

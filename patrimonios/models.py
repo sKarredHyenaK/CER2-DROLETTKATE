@@ -5,8 +5,8 @@ class Categoria(models.Model):
     nombre = models.CharField(max_length=1000, unique=True, verbose_name="Nombre de la Categoría")
     descripcion = models.TextField(verbose_name="Descripción")
 
-#Mostrar nombre en panel de Administración
-def __str__(self):
+    #Mostrar nombre en panel de Administración
+    def __str__(self):
         return self.nombre
     
 class LugarPatrimonial(models.Model):
