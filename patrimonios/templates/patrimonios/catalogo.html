@@ -8,12 +8,12 @@
 <div class="mb-4">
     <span class="fw-bold me-2">Filtrar por categoría:</span>
     <a href="{% url 'patrimonios:catalogo' %}"
-        class="btn btn-sm {% if not categoria_seleccionada %}btn-dark{% else %}btn-outline-dark{% endif %} me-1 mb-1">
+        class="btn btn-sm {% if not categoria_seleccionada %}btn-dark{% else %}btn-secondary{% endif %} me-1 mb-1">
         Todas
     </a>
     {% for categ in categorias %}
     <a href="{% url 'patrimonios:catalogo' %}?categoria={{ categ.id }}"
-        class="btn btn-sm {% if categoria_seleccionada == categ.id %}btn-dark{% else %}btn-outline-dark{% endif %} me-1 mb-1">
+        class="btn btn-sm {% if categoria_seleccionada == categ.id %}btn-dark{% else %}btn-secondary{% endif %} me-1 mb-1">
         {{ categ.nombre }}
     </a>
     {% endfor %}

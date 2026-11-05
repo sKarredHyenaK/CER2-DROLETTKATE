@@ -1,5 +1,75 @@
-/* Aplicar la tipografía Ubuntu a todo el sitio */
+/* 1. FONDO Y TIPO DE LETRA */
 body {
+    background-image: linear-gradient(rgba(8, 8, 111, 0.481), rgba(15, 7, 134, 0.075)),
+                        url('https://storage.needpix.com/rsynced_images/blue-1273089_1280.jpg');
+
+    /* Ajustes para cubrir toda la pantalla  */
+    background-size: cover;       /* Escala la imagen para cubrir todo el espacio */
+    background-position: center;  /* Centrar imagen */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-attachment: fixed; /* Mantiene la imagen fija */
+
+    background-color: #0A2342; /* color de fondo como respaldo */
+
     font-family: 'Ubuntu', sans-serif;
+    color: #e7e6e6;
     background-color: #f8f9fa;
+}
+
+/* 2. NAVBAR*/
+.navbar {
+    background-color: #1b9881 !important; 
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Pequeña sombra debajo del menú */
+}
+
+.navbar-brand{
+    font-weight: bold;
+    font-family: "Ubuntu", sans-serif;
+}
+
+.navbar-brand, .nav-link {
+    color: #ffffff !important; 
+}
+
+.nav-link:hover {
+    color: #89c2d9 !important; /* Color celeste al pasar el mouse por encima */
+}
+
+/*3. BANNER*/
+.banner-panoramico {
+    background-image: url('https://thetravellab.cl/_next/image/?url=%2Fmedia%2Fportadas%2Fchile-isla-de-pascua-1920.webp&w=3840&q=75');
+    height: 420px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100vw; /* Ocupa el 100% del ancho de la ventana del navegador */
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+}
+
+/*4. ESTILO CARTAS*/
+.card {
+    transition: transform 0.2s ease-in-out;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+
+/*5. PIE DE PAGINA*/
+footer {
+    background-color: #3A506B; 
+    color: #ecf0f1; 
+    padding-top: 30px;
+    padding-bottom: 20px;
+    margin-top: 50px;
+}
+
+footer h5 {
+    color: #5BC0BE; 
+    margin-bottom: 15px;
 }
