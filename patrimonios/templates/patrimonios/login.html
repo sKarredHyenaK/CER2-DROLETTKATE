@@ -1,7 +1,8 @@
-{% extends 'patrimonios/base.html' %}
+{% extends 'patrimonios/base.html' %}       <!--Herencia-->
 {% block title %}Iniciar Sesión - Fundación Patrimonio Vivo{% endblock %}
 
 {% block content %}
+<!--CONTENEDOR CENTRADO-->
 <div class="row justify-content-center">
     <div class="col-md-5">
         <div class="card shadow-sm border-0 p-4 mt-3">
@@ -14,9 +15,10 @@
             </div>
             {% endif %}
 
-            <form method="post">
+            <form method="post">    <!--Metodo POST-->
                 {% csrf_token %}
 
+                <!--Campos de usuario y contraseña-->
                 <div class="mb-3">
                     <label for="id_username" class="form-label fw-semibold">Nombre de usuario</label>
                     <input type="text" name="username" autofocus autocapitalize="none" autocomplete="username"
@@ -29,6 +31,7 @@
                         id="id_password">
                 </div>
 
+                <!--Boton de envio y enlace de retorno-->
                 <button type="submit" class="btn btn-primary w-100 py-2 mt-2">INGRESAR</button>
             </form>
 

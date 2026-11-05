@@ -1,23 +1,26 @@
-{% extends 'patrimonios/base.html' %}
+{% extends 'patrimonios/base.html' %}       <!--Herencia-->
 {% block title %}{{ lugar.nombre }} - Detalle{% endblock %}
 
 {% block content %}
+<!--TARJETA 2 COLUMNAS-->
 <div class="card shadow-sm border-0">
     <div class="row g-0">
         <div class="col-md-6">
             <img src="{{ lugar.imagen }}" class="img-fluid rounded-start h-100" alt="{{ lugar.nombre }}"
                 style="object-fit: cover; min-height: 300px;">
         </div>
+        <!--Info monumento y categoria-->
         <div class="col-md-6">
             <div class="card-body p-4">
                 <span class="badge bg-primary mb-2">{{ lugar.categoria.nombre }}</span>
                 <h2 class="card-title fw-bold">{{ lugar.nombre }}</h2>
                 <p class="text-muted"> {{ lugar.ubicacion }}</p>
 
-                {% if lugar.anio_construccion %}
+                {% if lugar.anio_construccion %} <!--Mira si hay año de construccion registrado-->
                 <p class="fw-semibold">Año de construcción: <span class="fw-normal">{{ lugar.anio_construccion }}</span></p>
                 {% endif %}
 
+                <!--Descripción y boton de retorno-->
                 <hr>
                 <h5>Descripción</h5>
                 <p class="card-text">{{ lugar.descripcion }}</p>

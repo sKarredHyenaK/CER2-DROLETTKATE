@@ -1,17 +1,17 @@
-{% extends 'patrimonios/base.html' %}
+{% extends 'patrimonios/base.html' %}       <!--Herencia-->
 {% block title %}Catálogo - Fundación Patrimonio Vivo{% endblock %}
 
 {% block content %}
 <h2 class="mb-4">Catálogo de Patrimonios</h2>
 
-<!-- Filtro Categorías -->
+<!--Filtro Categorías-->
 <div class="mb-4">
     <span class="fw-bold me-2">Filtrar por categoría:</span>
     <a href="{% url 'patrimonios:catalogo' %}"
         class="btn btn-sm {% if not categoria_seleccionada %}btn-dark{% else %}btn-secondary{% endif %} me-1 mb-1">
-        Todas
+        Todas       <!--Apunta a la ruta limpia de catálogo (sin filtro)-->
     </a>
-    {% for categ in categorias %}
+    {% for categ in categorias %}   <!--Selección de categorias-->
     <a href="{% url 'patrimonios:catalogo' %}?categoria={{ categ.id }}"
         class="btn btn-sm {% if categoria_seleccionada == categ.id %}btn-dark{% else %}btn-secondary{% endif %} me-1 mb-1">
         {{ categ.nombre }}
@@ -19,7 +19,7 @@
     {% endfor %}
 </div>
 
-<!-- Listado de Lugares -->
+<!--Listado Lugares / CARDS-->
 <div class="row row-cols-1 row-cols-md-3 g-4">
     {% for lugar in lugares %}
     <div class="col">
@@ -30,18 +30,18 @@
                 <span class="badge bg-secondary mb-2">{{ lugar.categoria.nombre }}</span>
                 <h5 class="card-title">{{ lugar.nombre }}</h5>
                 <p class="card-text text-muted"> {{ lugar.ubicacion }}</p>
-                <p class="card-text">{{ lugar.descripcion|truncatewords:15 }}</p>
+                <p class="card-text">{{ lugar.descripcion|truncatewords:15 }}</p> <!--Limita palabras que se ven por tarjeta-->
             </div>
             <div class="card-footer bg-white border-top-0">
                 <a href="{% url 'patrimonios:detalle' lugar.id %}" class="btn btn-outline-primary btn-sm w-100">Ver
-                    detalle</a>
+                    detalle</a> <!--Detalle de la card-->
             </div>
         </div>
     </div>
-    {% empty %}
+    {% empty %} <!--Si una categoria esta vacía muestra una aviso-->
     <div class="col-12">
         <div class="alert alert-info">No se encontraron lugares patrimoniales registrados en esta categoría.</div>
     </div>
-    {% endfor %}
+    {% endfor %} <!--Cerrar ciclo-->
 </div>
 {% endblock %}

@@ -2,7 +2,7 @@ from django.db import models
 
 # Create your models here.
 class Categoria(models.Model):
-    nombre = models.CharField(max_length=1000, unique=True, verbose_name="Nombre de la Categoría")
+    nombre = models.CharField(max_length=100, unique=True, verbose_name="Nombre de la Categoría")
     descripcion = models.TextField(verbose_name="Descripción")
 
     #Mostrar nombre en panel de Administración
@@ -15,7 +15,7 @@ class LugarPatrimonial(models.Model):
     ubicacion = models.CharField(max_length=200, verbose_name="Ubicación / Ciudad")
     anio_construccion = models.IntegerField(verbose_name="Año de Construcción", null=True, blank=True)
     
-    # URL para simplificar el manejo de imagenes
+    #Poner imagen a traves de URL
     imagen = models.URLField(max_length=500, verbose_name="URL de la Imagen")
     
     #Clave Foranea (Muchos "LugarPatrimonial" pueden pertenecer a un "Categoria")

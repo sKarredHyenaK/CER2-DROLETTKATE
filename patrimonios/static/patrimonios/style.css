@@ -1,4 +1,4 @@
-/* 1. FONDO Y TIPO DE LETRA */
+/* 1.FONDO Y TIPO DE LETRA */
 body {
     background-image: linear-gradient(rgba(8, 8, 111, 0.481), rgba(15, 7, 134, 0.075)),
                         url('https://storage.needpix.com/rsynced_images/blue-1273089_1280.jpg');
@@ -16,9 +16,9 @@ body {
     background-color: #f8f9fa;
 }
 
-/* 2. NAVBAR*/
+/* 2.NAVBAR*/
 .navbar {
-    background-color: #1b9881 !important; 
+    background-color: #1a8f91 !important; 
     box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Pequeña sombra debajo del menú */
 }
 
@@ -35,7 +35,7 @@ body {
     color: #89c2d9 !important; /* Color celeste al pasar el mouse por encima */
 }
 
-/*3. BANNER*/
+/*3.BANNER*/
 .banner-panoramico {
     background-image: url('https://thetravellab.cl/_next/image/?url=%2Fmedia%2Fportadas%2Fchile-isla-de-pascua-1920.webp&w=3840&q=75');
     height: 420px;
@@ -50,7 +50,7 @@ body {
     margin-right: -50vw;
 }
 
-/*4. ESTILO CARTAS*/
+/*4.ESTILO CARTAS*/
 .card {
     transition: transform 0.2s ease-in-out;
 }
@@ -60,7 +60,7 @@ body {
 }
 
 
-/*5. PIE DE PAGINA*/
+/*5.FOOTER*/
 footer {
     background-color: #3A506B; 
     color: #ecf0f1; 
