@@ -129,6 +129,6 @@ MAILERS = {
     },
 }
 
-#Redirecciones de autenticación
+#Redirecciones a la hora de iniciar o cerrar sesion
 LOGIN_REDIRECT_URL = 'patrimonios:index'
 LOGOUT_REDIRECT_URL = 'patrimonios:index'
