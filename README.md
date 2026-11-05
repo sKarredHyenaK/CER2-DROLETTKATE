@@ -1,4 +1,5 @@
 # CERTAMEN 2 EIN082B
+link repositorio Github: https://github.com/sKarredHyenaK/CER2-DROLETTKATE
 
 ### Requisitos previos:
 - Python instalado. Verificar:
