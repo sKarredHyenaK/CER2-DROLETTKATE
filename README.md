@@ -9,23 +9,19 @@ verificar: python --version
 - Descargar o clonar proyecto
 
 - Inicializar entorno virtual
-comandos:
-
+```bash
 python -m venv .venv        # Crear el entorno virtual
 .venv\Scripts\activate      # Activar el entorno virtual (Windows)
 source .venv/bin/activate   # Activar el entorno virtual (macOS/Linux)
-
+```
 - Instalar Dependencias
-comandos:
 
 pip install -r requirements.txt
 
 - Configurar Base de Datos
-comandos:
 
 python manage.py migrate
 
 - Ejecutar Aplicación
-comandos:
 
 python manage.py runserver
