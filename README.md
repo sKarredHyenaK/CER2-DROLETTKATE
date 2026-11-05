@@ -27,3 +27,7 @@ python manage.py migrate
 ```bash
 python manage.py runserver
 ```
+### Creación de Usuario Administrador (Para pruebas de gestión y permisos):
+```bash
+python manage.py createsuperuser
+```
