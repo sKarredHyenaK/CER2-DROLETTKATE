@@ -29,10 +29,10 @@ python manage.py runserver
 
 ## USUARIOS REGISTRADOS PARA PRUEBAS:
 
-#### Superusuario
-Superususario: admin
-contraseña: admin1234
+### Superusuario
+- superususario: admin
+- contraseña: admin1234
 
-#### Usuario con permisos limitados:
-usuario: user
-contraseña: User1234
+### Usuario con permisos limitados:
+- usuario: user
+- contraseña: User1234
