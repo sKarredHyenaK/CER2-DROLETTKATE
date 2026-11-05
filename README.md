@@ -1,8 +1,7 @@
 # CERTAMEN 2 EIN082B
 
 ### Requisitos previos:
-- Python instalado
-verificar:
+- Python instalado. Verificar:
 ```bash 
 python --version
 ```
